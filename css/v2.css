@@ -818,7 +818,30 @@ section.hud-section {
     background: linear-gradient(180deg, transparent 60%, rgba(8, 9, 13, 0.4));
 }
 @media (max-width: 880px) {
-    .about-photo { position: static; max-height: 520px; max-width: 380px; justify-self: start; }
+    .about-photo {
+        position: static;
+        aspect-ratio: auto;
+        height: auto;
+        width: 100%;
+        max-width: none;
+        max-height: none;
+        justify-self: stretch;
+        align-self: start;
+        background: var(--bg-elev);
+        display: block;
+    }
+    /* image fills full width, dictates height — natural aspect, top-aligned */
+    .about-photo img {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+        object-position: top center;
+        clip-path: none;
+    }
+    .about-photo .overlay { display: none; }
 }
 
 .tags-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -2098,23 +2121,63 @@ section.hud-section {
 }
 .pub-actions { margin-top: 0.6rem; display: flex; gap: 0.6rem; flex-wrap: wrap; }
 
+/* Tablet (881–980): thinner rail */
+@media (min-width: 881px) and (max-width: 980px) {
+    .pub-card { grid-template-columns: 130px minmax(0, 1fr); gap: 1.25rem; padding: 1.25rem 1.4rem; }
+    .pub-num { font-size: 1.85rem; }
+}
+
+/* Mobile stack (≤880px) */
 @media (max-width: 880px) {
     .pub-card {
         grid-template-columns: 1fr;
         gap: 1rem;
-        padding: 1.25rem;
+        padding: 1.4rem 1.5rem;
     }
     .pub-rail {
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
         padding-right: 0;
-        padding-bottom: 0.75rem;
+        padding-bottom: 0.85rem;
         border-right: 0;
         border-bottom: 1px dashed var(--border);
-        gap: 1rem;
+        gap: 0.6rem 0.75rem;
         justify-content: flex-start;
+        min-height: auto;
     }
-    .pub-num { font-size: 1.6rem; }
+    .pub-num { font-size: 1.65rem; }
+    .pub-rail .pill { align-self: center; }
+    .pub-body { gap: 0.65rem; }
+    .pub-body h3 { font-size: 1.05rem; line-height: 1.35; }
+    .pub-body .authors { font-size: 0.82rem; line-height: 1.55; }
+    .pub-body .abstract { font-size: 0.92rem; line-height: 1.6; }
+    .pub-actions { margin-top: 0.5rem; }
+    .pub-actions .btn { width: 100%; }
+}
+
+/* Phone (≤520px): tighter, full single-column hierarchy */
+@media (max-width: 520px) {
+    .pub-card { padding: 1.15rem 1.2rem; gap: 0.85rem; }
+    .pub-rail {
+        gap: 0.5rem 0.6rem;
+        padding-bottom: 0.7rem;
+    }
+    .pub-num { font-size: 1.4rem; flex-shrink: 0; }
+    .pub-year { font-size: 0.7rem; }
+    .pub-rail .pill { font-size: 0.6rem; padding: 0.22rem 0.5rem; }
+    .pub-type { font-size: 0.6rem; flex-basis: 100%; margin-top: 0.15rem; }
+    .pub-body h3 { font-size: 0.98rem; line-height: 1.35; }
+    .pub-body .authors { font-size: 0.78rem; }
+    .pub-body .abstract { font-size: 0.88rem; }
+}
+
+/* Tiny phone (≤380px) */
+@media (max-width: 380px) {
+    .pub-card { padding: 1rem 1.1rem; }
+    .pub-rail { gap: 0.4rem 0.5rem; }
+    .pub-num { font-size: 1.25rem; }
+    .pub-body h3 { font-size: 0.94rem; }
 }
 
 /* ---------- Experience cards ---------- */
@@ -2207,21 +2270,69 @@ section.hud-section {
     font-weight: 600;
 }
 
+/* Tablet (721–980): thinner rail */
+@media (min-width: 721px) and (max-width: 980px) {
+    .exp-card { grid-template-columns: 150px minmax(0, 1fr); gap: 1.5rem; padding: 1.25rem 1.5rem; }
+    .exp-bullets { grid-template-columns: 1fr; }
+}
+
+/* Mobile stack (≤720px) */
 @media (max-width: 720px) {
     .exp-card {
         grid-template-columns: 1fr;
         gap: 1rem;
-        padding: 1.25rem;
+        padding: 1.4rem 1.5rem;
     }
     .exp-meta {
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
         padding-right: 0;
-        padding-bottom: 0.75rem;
+        padding-bottom: 0.85rem;
         border-right: 0;
         border-bottom: 1px dashed var(--border);
-        gap: 0.85rem;
+        gap: 0.6rem 0.85rem;
     }
+    .exp-when { font-size: 0.72rem; }
+    .exp-meta .pill { align-self: center; }
+    .exp-body { gap: 0.7rem; }
+    .exp-title { font-size: 1.15rem; line-height: 1.25; }
+    .exp-org { font-size: 0.92rem; line-height: 1.45; }
+    .exp-bullets { grid-template-columns: 1fr; gap: 0.4rem; font-size: 0.88rem; margin: 0.5rem 0 0.6rem; }
+    .exp-bullets li { padding-left: 1.1rem; line-height: 1.5; }
+    .exp-card.current::after {
+        top: 1.4rem; left: -1px;
+        height: 22px;
+    }
+}
+
+/* Phone (≤520px): tighter spacing, action-friendly tap targets */
+@media (max-width: 520px) {
+    .exp-card { padding: 1.2rem 1.25rem; gap: 0.85rem; }
+    .exp-meta {
+        gap: 0.5rem 0.7rem;
+        padding-bottom: 0.7rem;
+    }
+    .exp-when { font-size: 0.68rem; letter-spacing: 0.12em; }
+    .exp-meta .pill { font-size: 0.58rem; padding: 0.2rem 0.45rem; }
+    .exp-title { font-size: 1.05rem; }
+    .exp-org { font-size: 0.86rem; }
+    .exp-org .muted { display: block; font-size: 0.78rem; margin-top: 0.15rem; }
+    .exp-bullets { font-size: 0.85rem; }
+    .exp-bullets li { padding-left: 1rem; }
+    .exp-card .tags-row { gap: 0.3rem; margin-top: 0.25rem; }
+    .exp-card.current::after {
+        top: 1.2rem;
+        height: 18px;
+    }
+}
+
+/* Tiny phone (≤380px) */
+@media (max-width: 380px) {
+    .exp-card { padding: 1rem 1.1rem; }
+    .exp-title { font-size: 1rem; line-height: 1.3; }
+    .exp-org { font-size: 0.82rem; }
+    .exp-bullets { font-size: 0.82rem; }
 }
 
 /* ---------- Timeline ---------- */
@@ -2788,15 +2899,36 @@ a.cg-val:hover { color: var(--accent); }
 
 .contact-actions {
     display: flex; gap: 0.75rem; flex-wrap: wrap;
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
     padding: 0;
     border-top: 0;
     justify-content: flex-end;
+    align-items: center;
 }
-.contact-actions .btn { flex: 1; min-width: 200px; }
-@media (max-width: 520px) {
-    .contact-actions { flex-direction: column; }
-    .contact-actions .btn { width: 100%; }
+.contact-actions .btn {
+    /* natural width on desktop, comfortable tap target */
+    height: 48px;
+    padding: 0 1.5rem;
+    min-width: 240px;
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
+    flex: 0 0 auto;
+}
+@media (max-width: 720px) {
+    .contact-actions { justify-content: stretch; }
+    .contact-actions .btn {
+        flex: 1 1 100%;
+        width: 100%;
+        min-width: 0;
+        height: 50px;
+    }
+}
+@media (max-width: 380px) {
+    .contact-actions .btn {
+        height: 46px;
+        font-size: 0.75rem;
+        padding: 0 1rem;
+    }
 }
 
 /* ---------- Footer ---------- */
@@ -2873,13 +3005,7 @@ html, body { overflow-x: clip; }
     .hero { padding: 6rem 0 3.5rem; }
     .hero-panel { padding: 1.1rem; }
 
-    /* publications: rail thinner so body has room */
-    .pub-card { grid-template-columns: 130px minmax(0, 1fr); gap: 1.25rem; padding: 1.25rem 1.4rem; }
-    .pub-num { font-size: 1.85rem; }
-
-    /* experience: rail thinner */
-    .exp-card { grid-template-columns: 150px minmax(0, 1fr); gap: 1.5rem; padding: 1.25rem 1.5rem; }
-    .exp-bullets { grid-template-columns: 1fr; }
+    /* (publications + experience cards stack at ≤880 / 720; tablet rules scoped below) */
 
     /* lab content gap reduced */
     .lab { gap: 1.75rem; }
@@ -2951,14 +3077,8 @@ html, body { overflow-x: clip; }
     .card .actions .btn-primary { width: 100%; }
     .card .actions .btn-ghost { flex: 1; min-width: 96px; }
 
-    /* Publications: rail flips on top horizontal already at ≤880, tighten */
-    .pub-card { padding: 1.1rem; }
-    .pub-num { font-size: 1.5rem; }
-
-    /* Experience */
-    .exp-card { padding: 1rem 1.1rem; gap: 0.75rem; }
-    .exp-title { font-size: 1.05rem; }
-    .exp-bullets { font-size: 0.84rem; }
+    /* Publications mobile: see dedicated block below */
+    /* Experience mobile: see dedicated block below */
 
     /* Lab */
     .lab { padding: 1.1rem; }
