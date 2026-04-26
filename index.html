@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Nahid Hasan — VR/HCI Researcher</title>
+    <meta name="description" content="Portfolio of MD Nahid Hasan, MS CS @ UW-Milwaukee. VR research for safer, more human systems. HCI · AI/ML · Pedestrian safety.">
+    <meta name="theme-color" content="#08090d">
+    <link rel="canonical" href="https://nahidux.com/">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2308090d'/%3E%3Crect x='10' y='10' width='44' height='44' fill='none' stroke='%23ff4655' stroke-width='2'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' dominant-baseline='middle' font-family='Inter,sans-serif' font-weight='800' font-size='28' fill='%23eef0f4'%3EN%3C/text%3E%3C/svg%3E">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nahidux.com/">
+    <meta property="og:title" content="MD Nahid Hasan — VR/HCI Researcher">
+    <meta property="og:description" content="VR research for safer, more human systems. MS CS @ UW-Milwaukee.">
+    <meta property="og:image" content="https://nahidux.com/image/og-preview.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/v2.css">
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <!-- ============ NAV ============ -->
+    <nav class="nav" aria-label="Primary">
+        <div class="nav-inner">
+            <a href="#main" class="brand" aria-label="Nahid — home">
+                <span>MD Nahid Hasan</span>
+            </a>
+
+            <div class="nav-links">
+                <a class="nav-link" href="#work">About</a>
+                <a class="nav-link" href="#research">Research</a>
+                <a class="nav-link" href="#publications">Publications</a>
+                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#experience">Experience</a>
+                <a class="nav-link" href="#lab">Lab</a>
+                <a class="nav-link" href="#contact">Contact</a>
+            </div>
+
+            <div class="nav-tools">
+                <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" type="button">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                </button>
+                <button class="icon-btn" id="soundToggle" aria-label="Sound toggle" aria-pressed="false" type="button">
+                    <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M15 9a4 4 0 0 1 0 6"/><path d="M18 6a8 8 0 0 1 0 12"/></svg>
+                    <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M22 9l-6 6M16 9l6 6"/></svg>
+                </button>
+                <a class="btn btn-sm btn-primary nav-cta" href="#contact">
+                    Contact
+                    <svg class="arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+                <button class="hamburger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ MOBILE MENU ============ -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <a class="nav-link" href="#work">About</a>
+        <a class="nav-link" href="#research">Research</a>
+        <a class="nav-link" href="#publications">Publications</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#videos">Videos</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#lab">Lab</a>
+        <a class="nav-link" href="#contact">Contact</a>
+    </div>
+
+    <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+        <div class="container hero-grid">
+            <div class="hero-left">
+                <div class="hero-status">
+                    <span class="dot"></span>
+                    <span>Available · MS CS @ UW-Milwaukee</span>
+                </div>
+
+                <p class="hero-eyebrow">VR / HCI Researcher · Milwaukee, WI</p>
+
+                <h1 id="heroTitle" class="hero-title">
+                    <span class="line"><span>MD Nahid</span></span>
+                    <span class="line"><span>Hasan<span class="dot-accent">.</span></span></span>
+                </h1>
+
+                <p class="hero-headline">
+                    VR research for safer, more human systems.
+                </p>
+
+                <p class="tagline">
+                    I work at HEX Lab on VR locomotion, pedestrian safety, and accessible interaction — building considered tools for the way people actually move.
+                </p>
+
+                <div class="ctas">
+                    <a class="btn btn-primary" href="#publications">
+                        View publications
+                        <svg class="arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                    </a>
+                    <button class="btn" id="downloadCV" type="button">Request CV</button>
+                </div>
+            </div>
+
+            <!-- HUD elevator-pitch panel -->
+            <aside class="hero-panel" aria-label="Profile overview">
+                <div class="scanline"></div>
+
+                <div class="panel-head">
+                    <span class="panel-id">PROFILE // 0042</span>
+                    <span class="pill live">Active</span>
+                </div>
+
+                <div class="panel-body">
+                    <!-- Identity -->
+                    <div class="hp-id">
+                        <div class="hp-avatar">
+                            <img src="image/nahid_photo/nahid.jpg" alt="" loading="lazy"
+                                onerror="this.parentElement.innerHTML='<span style=&quot;font-size:2rem&quot;>👤</span>';">
+                        </div>
+                        <div class="hp-id-text">
+                            <p class="hp-name">MD Nahid Hasan</p>
+                            <p class="hp-role">Research Assistant · HEX Lab</p>
+                            <p class="hp-loc">UW-Milwaukee · MS CS</p>
+                        </div>
+                    </div>
+
+                    <div class="panel-divider"></div>
+
+                    <!-- Focus -->
+                    <div class="hp-section">
+                        <span class="hp-lbl">Focus</span>
+                        <div class="hp-tags">
+                            <span class="tag">VR Locomotion</span>
+                            <span class="tag">Pedestrian Safety</span>
+                            <span class="tag">HCI</span>
+                            <span class="tag">Accessibility</span>
+                        </div>
+                    </div>
+
+                    <!-- Active research -->
+                    <div class="hp-section">
+                        <span class="hp-lbl">Active research</span>
+                        <div class="hp-projects">
+                            <div class="hp-project">
+                                <div class="hp-project-row">
+                                    <span class="hp-project-name">Guided Walking Speed</span>
+                                    <span class="hp-project-state">Active</span>
+                                </div>
+                                <div class="bar" style="--pct:72%"></div>
+                            </div>
+                            <div class="hp-project">
+                                <div class="hp-project-row">
+                                    <span class="hp-project-name">Driver Blind Spots</span>
+                                    <span class="hp-project-state">Active</span>
+                                </div>
+                                <div class="bar" style="--pct:54%"></div>
+                            </div>
+                            <div class="hp-project">
+                                <div class="hp-project-row">
+                                    <span class="hp-project-name">Edutainment XR · Shore Defender</span>
+                                    <span class="hp-project-state published">Published</span>
+                                </div>
+                                <div class="bar" style="--pct:100%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-divider"></div>
+
+                    <!-- Output -->
+                    <div class="hp-output">
+                        <div class="hp-stat">
+                            <span class="hp-stat-num"><span data-count="4">4</span></span>
+                            <span class="hp-stat-lbl">Papers</span>
+                        </div>
+                        <div class="hp-stat">
+                            <span class="hp-stat-num"><span data-count="9">9</span></span>
+                            <span class="hp-stat-lbl">Projects</span>
+                        </div>
+                        <div class="hp-stat">
+                            <span class="hp-stat-num"><span data-count="2">2</span></span>
+                            <span class="hp-stat-lbl">Studies</span>
+                        </div>
+                        <div class="hp-stat">
+                            <span class="hp-stat-num"><span data-count="3">3</span></span>
+                            <span class="hp-stat-lbl">Years</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="hud-section" id="work" aria-labelledby="aboutTitle">
+        <div class="container">
+            <div class="section-head reveal">
+                <div class="left">
+                    <span class="eyebrow">// 01 — Profile</span>
+                    <h2 id="aboutTitle">About</h2>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <div class="about-grid reveal">
+                <div class="about-left">
+                    <div class="about-bio">
+                        <p style="font-size:1.05rem; margin-bottom:1rem">
+                            I'm fascinated by design and technology that make life easier and more enjoyable — from the bumpy yellow dots on sidewalks to 3D glasses. The little things that quietly make life more accessible always make me ask: how do we build things that feel more humane?
+                        </p>
+                        <p style="font-size:1.05rem; margin-bottom:1rem">
+                            With virtual reality and AI shaping the future, I want to direct these tools toward human needs — wellness, safety, and perception.
+                        </p>
+                        <p class="muted">
+                            Current focus: VR locomotion and simulation studies for pedestrian safety, including driver blind-spot evaluation.
+                        </p>
+                    </div>
+
+                    <!-- Education stack -->
+                    <div class="about-edu">
+                        <div class="flex between center" style="margin-bottom:1rem; gap:1rem; flex-wrap:wrap">
+                            <span class="eyebrow">// Education</span>
+                            <span class="tag">2 degrees</span>
+                        </div>
+                        <div class="edu-stack">
+                            <article class="edu-card card-bracket"><span class="br-tr"></span><span class="br-bl"></span>
+                                <div class="edu-logo">
+                                    <img src="image/education logo/UWM Primary Logo_Full Color on Dark.png" alt="University of Wisconsin-Milwaukee" loading="lazy">
+                                </div>
+                                <div class="edu-body">
+                                    <h3>MS, Computer Science</h3>
+                                    <p class="edu-place">University of Wisconsin-Milwaukee <span class="muted">· Wisconsin, USA</span></p>
+                                    <div class="edu-foot">
+                                        <span class="when">Sep 2024 — Present</span>
+                                        <div class="tags-row"><span class="tag">VR</span><span class="tag">HCI</span><span class="tag">AI/ML</span></div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="edu-card card-bracket"><span class="br-tr"></span><span class="br-bl"></span>
+                                <div class="edu-logo edu-logo-light">
+                                    <img src="image/education logo/bubt logo.png" alt="Bangladesh University of Business and Technology" loading="lazy">
+                                </div>
+                                <div class="edu-body">
+                                    <h3>BSc Eng, CSE</h3>
+                                    <p class="edu-place">BUBT <span class="muted">· Dhaka, Bangladesh · AI &amp; Expert Systems</span></p>
+                                    <div class="edu-foot">
+                                        <span class="when">Feb 2017 — Jun 2021</span>
+                                        <div class="tags-row"><span class="tag">AI</span><span class="tag">ML</span><span class="tag">Software</span></div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-photo">
+                    <img src="image/nahid_photo/nahid.jpg" alt="MD Nahid Hasan" loading="lazy"
+                        onerror="this.parentElement.innerHTML+='<div style=&quot;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:4rem&quot;>👤</div>'; this.remove();">
+                    <div class="overlay"></div>
+                </div>
+            </div>
+
+            <!-- Research interests -->
+            <div class="about-block reveal">
+                <div class="ab-head">
+                    <span class="eyebrow">// Research interests</span>
+                    <span class="ab-rule"></span>
+                    <span class="pill"><span data-count="9">9</span>&nbsp;Areas</span>
+                </div>
+                <div class="ri-grid">
+                    <span class="ri-tag">Virtual Reality</span>
+                    <span class="ri-tag">VR Locomotion</span>
+                    <span class="ri-tag">Perception &amp; Attention</span>
+                    <span class="ri-tag">Pedestrian Safety</span>
+                    <span class="ri-tag">Transportation</span>
+                    <span class="ri-tag">HCI</span>
+                    <span class="ri-tag">AI / ML</span>
+                    <span class="ri-tag">Wellness &amp; Health</span>
+                    <span class="ri-tag">Therapy</span>
+                </div>
+            </div>
+
+            <!-- Gear arsenal -->
+            <div class="about-block reveal">
+                <div class="ab-head">
+                    <span class="eyebrow">// Gear arsenal</span>
+                    <span class="ab-rule"></span>
+                    <span class="pill"><span data-count="3">3</span>&nbsp;Tools</span>
+                </div>
+                <div class="gear-grid">
+                    <div class="gear">
+                        <span class="gear-pip"></span>
+                        <div class="gear-head">
+                            <div class="ico">
+                                <svg viewBox="0 0 64 61" fill="none"><path d="M4.07481 24.4689V41.32c.03.0.06.001.09.004L14.5 42.32c.54.05.96.49 1 1.03l.32 4.56 9.01.64.62-4.21c.08-.55.55-.95 1.1-.95h10.9c.55 0 1.02.4 1.1.95l.62 4.21 9.01-.64.32-4.56c.04-.54.46-.98 1-1.03l10.33-1c.03 0 .06-.001.09-.004V24.47c1.37-1.75 2.63-3.59 3.85-5.55-1.61-2.75-3.59-5.2-5.7-7.47-1.96.99-3.86 2.1-5.66 3.29-.9-.89-1.91-1.62-2.9-2.39-.98-.79-2.08-1.36-3.13-2.03.31-2.32.46-4.6.52-6.98-2.69-1.36-5.57-2.26-8.48-2.91-1.16 1.95-2.22 4.07-3.15 6.13-1.1-.18-2.2-.25-3.3-.26-1.1.01-2.2.08-3.3.26-.92-2.06-1.98-4.18-3.14-6.13-2.91.65-5.78 1.55-8.48 2.91.06 2.38.21 4.66.53 6.98-1.05.67-2.15 1.24-3.13 2.03-1 .77-2.01 1.5-2.91 2.39-1.8-1.19-3.7-2.3-5.66-3.29C3.78 13.72 1.8 16.17.19 18.92c1.21 1.96 2.48 3.8 3.85 5.55h.04zm17.5 11.25c-2.45 0-4.45-2-4.45-4.45s2-4.45 4.45-4.45c2.45 0 4.45 2 4.45 4.45s-2 4.45-4.45 4.45zm10.42 2.41c-.79 0-1.43-.58-1.43-1.3v-4.09c0-.72.64-1.3 1.43-1.3.79 0 1.43.58 1.43 1.3v4.09c0 .72-.64 1.3-1.43 1.3zm10.4-2.41c-2.45 0-4.45-2-4.45-4.45s2-4.45 4.45-4.45c2.45 0 4.45 2 4.45 4.45s-2 4.45-4.45 4.45z" fill="currentColor"/></svg>
+                            </div>
+                            <span class="gear-cat">Game engine</span>
+                        </div>
+                        <div class="gear-body">
+                            <div class="name">Godot</div>
+                            <div class="role">VR development · 4.x</div>
+                        </div>
+                    </div>
+                    <div class="gear">
+                        <span class="gear-pip"></span>
+                        <div class="gear-head">
+                            <div class="ico">
+                                <svg viewBox="0 0 91 61" fill="none"><path d="M10.4 40c0 3.5.8 6.1 1.8 7.7 1.3 2.1 3.2 3 5.2 3 2.5 0 4.9-.6 9.4-6.8 3.6-5 7.8-12 10.6-16.4l4.8-7.4c3.4-5.1 7.2-10.9 11.6-14.7C57.5 2.3 61.4.5 65.4.5c6.6 0 13 3.8 17.7 11 5.3 7.9 7.9 17.8 7.9 28 0 6.1-1.2 10.6-3.2 14.1-2 3.4-5.8 6.9-12.3 6.9V50.8c5.5 0 6.9-5.1 6.9-10.9 0-8.3-1.9-17.5-6.2-24.1-3-4.7-7-7.5-11.3-7.5-4.7 0-8.4 3.5-12.6 9.8-2.3 3.3-4.6 7.4-7.2 12L42.3 35c-5.7 10.1-7.2 12.5-10 16.3-5 6.6-9.3 9.2-15 9.2-6.7 0-10.9-2.9-13.5-7.3C1.7 49.7.6 45 .6 39.7l9.8.3z" fill="currentColor"/></svg>
+                            </div>
+                            <span class="gear-cat">Headset</span>
+                        </div>
+                        <div class="gear-body">
+                            <div class="name">Meta Quest 2</div>
+                            <div class="role">Standalone VR · primary</div>
+                        </div>
+                    </div>
+                    <div class="gear">
+                        <span class="gear-pip"></span>
+                        <div class="gear-head">
+                            <div class="ico ico-wide">
+                                <svg viewBox="0 0 209 26" fill="none"><path d="M183.3 0h25.1v25.1h-5.7V5.7h-19.4V0zM175 19.4V0h5.7v19.4h19.4v5.7H175v-5.7zM132.2 19.4h19.4V0h5.7v25.1h-25.1v-5.7zM102 5.7V0h25.1v5.7H107.7v19.4H102V5.7zM46.7 21.1L67.8 0l21.1 21.1-4 4-17-17.04-17 17.03-4-4zM38.1 0l4 4-21 21.1L0 4 4 0l17 17 17-17z" fill="currentColor"/></svg>
+                            </div>
+                            <span class="gear-cat">XR device</span>
+                        </div>
+                        <div class="gear-body">
+                            <div class="name">Varjo XR-4</div>
+                            <div class="role">High-fidelity research</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ RESEARCH ============ -->
+    <section class="hud-section" id="research" aria-labelledby="resTitle">
+        <div class="container">
+            <div class="section-head reveal">
+                <div class="left">
+                    <span class="eyebrow">// 02 — Research</span>
+                    <h2 id="resTitle">Active studies</h2>
+                </div>
+                <div class="divider"></div>
+                <span class="pill active">2 Active</span>
+            </div>
+
+            <div class="grid-2">
+                <article class="card card-clip card-bracket card-scan reveal"><span class="br-tr"></span><span class="br-bl"></span>
+                    <div class="card-media">
+                        <img src="image/research/EVALUATION OF GUIDED WALKING SPEED TECHNIQUES IN VIRTUAL REALITY.png" alt="Guided walking speed VR study figure" loading="lazy">
+                    </div>
+                    <div class="meta">
+                        <span class="pill active">Active</span>
+                        <span class="tag">VR Locomotion</span>
+                        <span class="tag">Research</span>
+                    </div>
+                    <h3>Evaluation of guided walking speed techniques in VR</h3>
+                    <p>Evaluating guided walking techniques to control walking speed and reduce confounding variables in VR locomotion research.</p>
+                    <div class="actions">
+                        <button class="btn btn-sm" type="button">Open dossier</button>
+                        <button class="btn btn-sm btn-ghost" type="button">Video</button>
+                    </div>
+                </article>
+
+                <article class="card card-clip card-bracket card-scan reveal"><span class="br-tr"></span><span class="br-bl"></span>
+                    <div class="card-media">
+                        <img src="image/research/SIMULATING DRIVER BLIND SPOTS WITH VR_ IMPLICATIONS FOR PEDESTRIAN SAFETY.png" alt="Driver blind spot VR simulation" loading="lazy">
+                    </div>
+                    <div class="meta">
+                        <span class="pill active">Active</span>
+                        <span class="tag">Safety</span>
+                        <span class="tag">Transportation</span>
+                    </div>
+                    <h3>Simulating driver blind spots: pedestrian safety</h3>
+                    <p>VR simulation of vehicle blind spots across heights — trucks, cars — and how that affects pedestrian and driver safety.</p>
+                    <div class="actions">
+                        <button class="btn btn-sm" type="button">Open dossier</button>
+                        <button class="btn btn-sm btn-ghost" type="button">Video</button>
+                    </div>
+                </article>
+
+                <article class="card card-clip card-bracket card-scan reveal"><span class="br-tr"></span><span class="br-bl"></span>
+                    <div class="card-media">
+                        <img src="image/research/Shore Defender.png" alt="Shore Defender VR edutainment cover" loading="lazy">
+                    </div>
+                    <div class="meta">
+                        <span class="pill published">Published</span>
+                        <span class="tag">VR Edutainment</span>
+                        <span class="tag">Conservation</span>
+                    </div>
+                    <h3>Shore Defender — VR edutainment for ocean conservation</h3>
+                    <p>Multiplayer VR edutainment game raising awareness about ocean conservation and plastic recycling through novel interaction techniques.</p>
+                    <div class="actions">
+                        <a class="btn btn-sm" href="https://ieeexplore.ieee.org/abstract/document/10972693" target="_blank" rel="noopener">Open dossier</a>
+                        <a class="btn btn-sm btn-ghost" href="https://www.youtube.com/watch?v=DsBCUvweIU0" target="_blank" rel="noopener">Video</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section class="hud-section" id="publications" aria-labelledby="pubTitle">
+        <div class="container">
+            <div class="section-head reveal">
+                <div class="left">
+                    <span class="eyebrow">// 03 — Publications</span>
+                    <h2 id="pubTitle">Selected papers</h2>
+                </div>
+                <div class="divider"></div>
+                <span class="pill"><span data-count="4">4</span>&nbsp;Total</span>
+            </div>
+
+            <div class="pub-list">
+                <article class="pub-card reveal" data-type="conference">
+                    <div class="pub-rail">
+                        <span class="pub-num">01</span>
+                        <span class="pill published">IEEE VR</span>
+                        <span class="pub-type">Conference</span>
+                    </div>
+                    <div class="pub-body">
+                        <h3>Shore Defender: A VR Edutainment Game Aiming to Raise Public Awareness on Ocean Conservation and Plastic Recycling</h3>
+                        <p class="authors">Md Azizul Hakim, <strong>Md Nahid Hasan</strong>, Randall Sanders, Jerald Thomas</p>
+                        <p class="abstract">Multiplayer VR edutainment game raising awareness about ocean conservation and plastic recycling through novel interaction techniques and immersive gameplay.</p>
+                        <div class="pub-actions">
+                            <a class="btn btn-sm" href="https://ieeexplore.ieee.org/abstract/document/10972693" target="_blank" rel="noopener">
+                                View paper
+                                <svg class="arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="pub-card reveal" data-type="journal">
+                    <div class="pub-rail">
+                        <span class="pub-num">02</span>
+                        <span class="pill ok">Springer</span>
+                        <span class="pub-type">Journal</span>
+                    </div>
+                    <div class="pub-body">
+                        <h3>Advancing Breast Cancer Diagnosis: Attention-Enhanced U-Net for Breast Cancer Segmentation</h3>
+                        <p class="authors"><strong>Md Nahid Hasan</strong>, Adit Ishraq, Ashraful Alam Emon, Jungpil Shin, Md Mohsin Kabir</p>
+                        <p class="abstract">An attention-enhanced U-Net with saliency mechanisms improves breast cancer segmentation — greater accuracy, efficiency, and adaptability than conventional models.</p>
+                        <div class="pub-actions">
+                            <a class="btn btn-sm" href="https://scholar.google.com/scholar?q=Advancing+Breast+Cancer+Diagnosis+Attention-Enhanced+U-Net+Nahid+Hasan" target="_blank" rel="noopener">
+                                View paper
+                                <svg class="arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="pub-card reveal" data-type="journal">
+                    <div class="pub-rail">
+                        <span class="pub-num">03</span>
+                        <span class="pill ok">Springer</span>
+                        <span class="pub-type">Journal</span>
+                    </div>
+                    <div class="pub-body">
+                        <h3>Road sign detection using variants of YOLO and R-CNN: An analysis from the perspective of Bangladesh</h3>
+                        <p class="authors">Aklima Akter Lima, Md Mohsin Kabir, Sujoy Chandra Das, <strong>Md Nahid Hasan</strong>, MF Mridha</p>
+                        <p class="abstract">Using the BDRS 2021 dataset, identifies YOLOv3 and Faster R-CNN as the most effective among seven models for real-time road sign detection — improving ADAS systems for road safety.</p>
+                        <div class="pub-actions">
+                            <a class="btn btn-sm" href="https://scholar.google.com/scholar?q=Road+sign+detection+yolo+r-cnn+bangladesh+Nahid+Hasan" target="_blank" rel="noopener">
+                                View paper
+                                <svg class="arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="pub-card reveal" data-type="journal">
+                    <div class="pub-rail">
+                        <span class="pub-num">04</span>
+                        <span class="pill ok">JSRR</span>
+                        <span class="pub-type">Journal</span>
+                    </div>
+                    <div class="pub-body">
+                        <h3>Information-based mobile application to tackle COVID-19 circumstances</h3>
+                        <p class="authors">Sakhawat Hossain, <strong>Md Nahid Hasan</strong>, Md Nazibul Islam, Mamunur Rashid Mukto, Md Shahnewaz Abid, Fahima Khanam</p>
+                        <p class="abstract">An IoMT-driven HCI application integrating real-time health monitoring, COVID-19 tracking, and telemedicine to strengthen pandemic response in developing countries.</p>
+                        <div class="pub-actions">
+                            <a class="btn btn-sm" href="https://www.researchgate.net/publication/349917319_Information-Based_Mobile_Application_to_Tackle_COVID-19_Circumstances" target="_blank" rel="noopener">
+                                View paper
+                                <svg class="arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="hud-section" id="projects" aria-labelledby="projTitle">
+        <div class="container">
+            <div class="section-head reveal">
+                <div class="left">
+                    <span class="eyebrow">// 04 — Projects</span>
+                    <h2 id="projTitle">Built things</h2>
+                </div>
+                <div class="divider"></div>
+                <span class="pill"><span data-count="9">9</span>&nbsp;Items</span>
+            </div>
+
+            <div class="grid-3">
+
+                <article class="card card-clip card-bracket card-scan reveal"><span class="br-tr"></span><span class="br-bl"></span>
+                    <div class="card-media"><img src="image/projects/VR RHYTHM SABER COMBAT.png" alt="VR Rhythm Saber Combat" loading="lazy"></div>
+                    <div class="meta"><span class="tag">Godot</span><span class="tag">Therapy</span></div>
+                    <h3>VR Rhythm Saber Combat</h3>
+                    <p>Hand therapy as a music-driven VR game. Players slice cubes to practice sensory coordination, range of motion, and hand-eye timing for upper-limb rehab.</p>
+                    <div class="actions">
+                        <button class="btn btn-sm btn-primary" disabled>Details</button>
+                        <button class="btn btn-sm btn-ghost" disabled>YouTube</button>
+                    </div>
+                </article>
+
+                <article class="card card-clip card-bracket card-scan reveal"><span class="br-tr"></span><span class="br-bl"></span>
+                    <div class="card-media"><img src="image/projects/ACCESSIBLE VR LOCOMOTION.png" alt="Accessible VR Locomotion" loading="lazy"></div>
+                    <div class="meta"><span class="tag">Godot</span><span class="tag">Accessibility</span></div>
+                    <h3>Accessible VR Locomotion</h3>
+                    <p>Hand-based forward/back movement with head-angle steering — mirroring how wheelchair users propel themselves. Doubles as motor rehab and neck therapy.</p>
+                    <div class="actions">
+                        <button class="btn btn-sm btn-primary" disabled>Details</button>
+                        <button class="btn btn-sm btn-ghost" disabled>YouTube</button>
+                    </div>
+                </article>
+
+                <article class="card card-clip card-bracket card-scan reveal"><span class="br-tr"></span><span class="br-bl"></span>
+                    <div class="card-media"><img src="image/projects/BIMANUAL VR MANIPULATION.png" alt="Bimanual VR Manipulation" loading="lazy"></div>
+                    <div class="meta"><span class="tag">Godot</span><span class="tag">Education</span></div>
+                    <h3>Bimanual VR Manipulation</h3>
+                    <p>Two-handed object manipulation with real-time scaling. Built for engineering tasks like engine inspection and motor-function therapy.</p>
+                    <div class="actions">
+                        <button class="btn btn-sm btn-primary" disabled>Details</button>
+                        <button class="btn btn-sm btn-ghost" disabled>YouTube</button>
+                    </div>
+                </article>
+
+                <article class="card card-clip card-bracket card-scan reveal"><span class="br-tr"></span><span class="br-bl"></span>
+                    <div class="card-media"><img src="image/projects/vrclimb.jpg" alt="VR Climbing" loading="lazy"></div>
+                    <div class="meta"><span class="tag">Unreal</span><span class="tag">Therapy</span></div>
+                    <h3>VR Climbing</h3>
+                    <p>Two-handed climbing for upper-body rehab and exposure-based training for height phobia.</p>
+                    <div class="actions">
+                        <button class="btn btn-sm btn-primary" disabled>Details</button>
+                        <a class="btn btn-sm btn-ghost" href="https://www.behance.net/gallery/183357879/VR-CLIMBING" target="_blank" rel="noopener">Behance</a>
+                        <a class="btn btn-sm btn-ghost" href="https://www.youtube.com/watch?v=rwYDdCRlKCE" target="_blank" rel="noopener">YouTube</a>
+                    </div>
+                </article>
+
+                <article class="card card-clip card-bracket card-scan reveal"><span class="br-tr"></span><span class="br-bl"></span>
+                    <div class="card-media"><img src="image/projects/vr slicing.jpg" alt="Slicing in VR" loading="lazy"></div>
+                    <div class="meta"><span class="tag">Unreal</span><span class="tag">Physics</span></div>
+                    <h3>Slicing in VR</h3>
+                    <p>VR slicing interaction in Unreal — advanced object physics and real-time mesh cuts.</p>
+                    <div class="actions">
+                        <button class="btn btn-sm btn-primary" disabled>Details</button>
+                        <a class="btn btn-sm btn-ghost" href="https://www.youtube.com/watch?v=0rsNQhLoc88" target="_blank" rel="noopener">YouTube</a>
+                    </div>
+                </article>
+
+                <article class="card card-clip card-bracket card-scan reveal"><span class="br-tr"></span><span class="br-bl"></span>
+                    <div class="card-media"><img src="image/projects/vr shooting.jpg" alt="Shooting in VR" loading="lazy"></div>
+                    <div class="meta"><span class="tag">Unreal</span><span class="tag">Mechanics</span></div>
+                    <h3>Shooting in VR</h3>
+                    <p>Immersive shooting mechanics with real-time hit detection in Unreal Engine.</p>
+                    <div class="actions">
+                        <button class="btn btn-sm btn-primary" disabled>Details</button>
+                        <a class="btn btn-sm btn-ghost" href="https://www.youtube.com/watch?v=doI7oWqkkTw" target="_blank" rel="noopener">YouTube</a>
+                    </div>
+                </article>
+
+                <article class="card card-clip card-bracket card-scan reveal"><span class="br-tr"></span><span class="br-bl"></span>
+                    <div class="card-media"><img src="image/projects/vr breathing.png" alt="VR Breathing Therapy" loading="lazy"></div>
+                    <div class="meta"><span class="tag">Unreal</span><span class="tag">Mindfulness</span></div>
+                    <h3>VR Breathing Therapy</h3>
+                    <p>Structured breathing in a calm VR space. Visual and auditory relaxation cues for mental well-being.</p>
+                    <div class="actions">
+                        <button class="btn btn-sm btn-primary" disabled>Details</button>
+                        <a class="btn btn-sm btn-ghost" href="https://www.youtube.com/watch?v=xWGP84gCquY&t=25s" target="_blank" rel="noopener">YouTube</a>
+                    </div>
+                </article>
+
+                <article class="card card-clip card-bracket card-scan reveal"><span class="br-tr"></span><span class="br-bl"></span>
+                    <div class="card-media"><img src="image/projects/virtual eating habit.jpg" alt="Healthy Eating Trainer" loading="lazy"></div>
+                    <div class="meta"><span class="tag">Python</span><span class="tag">CV</span></div>
+                    <h3>Healthy Eating Trainer</h3>
+                    <p>Child-centric educational game in Python. Face-tracking mechanics teach healthy eating habits.</p>
+                    <div class="actions">
+                        <button class="btn btn-sm btn-primary" disabled>Details</button>
+                        <a class="btn btn-sm btn-ghost" href="https://www.youtube.com/watch?v=Zb_mTyWeHYc" target="_blank" rel="noopener">YouTube</a>
+                    </div>
+                </article>
+
+                <article class="card card-clip card-bracket card-scan reveal"><span class="br-tr"></span><span class="br-bl"></span>
+                    <div class="card-media"><img src="image/projects/virtual painting.jpg" alt="Virtual Painting" loading="lazy"></div>
+                    <div class="meta"><span class="tag">Python</span><span class="tag">CV</span></div>
+                    <h3>Virtual Painting</h3>
+                    <p>Hand-tracking + computer vision merge AI with HCI for mid-air drawing.</p>
+                    <div class="actions">
+                        <button class="btn btn-sm btn-primary" disabled>Details</button>
+                        <a class="btn btn-sm btn-ghost" href="https://www.youtube.com/watch?v=vHOl_k28R18" target="_blank" rel="noopener">YouTube</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ VIDEOS ============ -->
+    <section class="hud-section" id="videos" aria-labelledby="vidTitle">
+        <div class="container">
+            <div class="section-head reveal">
+                <div class="left">
+                    <span class="eyebrow">// 05 — Field log</span>
+                    <h2 id="vidTitle">YouTube videos</h2>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <div class="carousel-wrap reveal">
+                <div class="carousel" id="videoCarousel">
+                    <article class="vid">
+                        <div class="thumb" onclick="loadVideo(this,'Dodl2BjuKtI')">
+                            <img src="https://img.youtube.com/vi/Dodl2BjuKtI/hqdefault.jpg" alt="Setting up XR in Godot" loading="lazy">
+                            <span class="vid-num">01</span>
+                            <span class="vid-mark">Stream</span>
+                        </div>
+                        <div class="vid-body">
+                            <h3>Setting up XR — Godot</h3>
+                            <p class="muted">Setting up XR in Godot Engine.</p>
+                            <a class="btn btn-sm" href="https://www.youtube.com/watch?v=Dodl2BjuKtI" target="_blank" rel="noopener">
+                                Watch
+                                <svg class="arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="vid">
+                        <div class="thumb" onclick="loadVideo(this,'PnYMR95N344')">
+                            <img src="https://img.youtube.com/vi/PnYMR95N344/hqdefault.jpg" alt="Distance-based grabbing in VR" loading="lazy">
+                            <span class="vid-num">02</span>
+                            <span class="vid-mark">Stream</span>
+                        </div>
+                        <div class="vid-body">
+                            <h3>Distance-based grabbing</h3>
+                            <p class="muted">Distance grabbing in Godot VR.</p>
+                            <a class="btn btn-sm" href="https://www.youtube.com/watch?v=PnYMR95N344" target="_blank" rel="noopener">
+                                Watch
+                                <svg class="arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="vid">
+                        <div class="thumb" onclick="loadVideo(this,'rwYDdCRlKCE')">
+                            <img src="https://img.youtube.com/vi/rwYDdCRlKCE/hqdefault.jpg" alt="VR Climbing" loading="lazy">
+                            <span class="vid-num">03</span>
+                            <span class="vid-mark">Stream</span>
+                        </div>
+                        <div class="vid-body">
+                            <h3>VR Climbing</h3>
+                            <p class="muted">Replicating natural climbing interactions.</p>
+                            <a class="btn btn-sm" href="https://www.youtube.com/watch?v=rwYDdCRlKCE" target="_blank" rel="noopener">
+                                Watch
+                                <svg class="arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="vid">
+                        <div class="thumb" onclick="loadVideo(this,'0rsNQhLoc88')">
+                            <img src="https://img.youtube.com/vi/0rsNQhLoc88/hqdefault.jpg" alt="Slicing in VR" loading="lazy">
+                            <span class="vid-num">04</span>
+                            <span class="vid-mark">Stream</span>
+                        </div>
+                        <div class="vid-body">
+                            <h3>Slicing in VR</h3>
+                            <p class="muted">Advanced object interaction and physics.</p>
+                            <a class="btn btn-sm" href="https://www.youtube.com/watch?v=0rsNQhLoc88" target="_blank" rel="noopener">
+                                Watch
+                                <svg class="arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="vid">
+                        <div class="thumb" onclick="loadVideo(this,'doI7oWqkkTw')">
+                            <img src="https://img.youtube.com/vi/doI7oWqkkTw/hqdefault.jpg" alt="Shooting in VR" loading="lazy">
+                            <span class="vid-num">05</span>
+                            <span class="vid-mark">Stream</span>
+                        </div>
+                        <div class="vid-body">
+                            <h3>Shooting in VR</h3>
+                            <p class="muted">Immersive shooting mechanics with hit detection.</p>
+                            <a class="btn btn-sm" href="https://www.youtube.com/watch?v=doI7oWqkkTw" target="_blank" rel="noopener">
+                                Watch
+                                <svg class="arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="vid">
+                        <div class="thumb" onclick="loadVideo(this,'xWGP84gCquY')">
+                            <img src="https://img.youtube.com/vi/xWGP84gCquY/hqdefault.jpg" alt="VR Breathing Therapy" loading="lazy">
+                            <span class="vid-num">06</span>
+                            <span class="vid-mark">Stream</span>
+                        </div>
+                        <div class="vid-body">
+                            <h3>VR Breathing Therapy</h3>
+                            <p class="muted">Mindfulness training with therapeutic breathing.</p>
+                            <a class="btn btn-sm" href="https://www.youtube.com/watch?v=xWGP84gCquY" target="_blank" rel="noopener">
+                                Watch
+                                <svg class="arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="vid">
+                        <div class="thumb" onclick="loadVideo(this,'Zb_mTyWeHYc')">
+                            <img src="https://img.youtube.com/vi/Zb_mTyWeHYc/hqdefault.jpg" alt="Healthy Eating Trainer" loading="lazy">
+                            <span class="vid-num">07</span>
+                            <span class="vid-mark">Stream</span>
+                        </div>
+                        <div class="vid-body">
+                            <h3>Healthy Eating Trainer</h3>
+                            <p class="muted">Educational game with face-tracking mechanics.</p>
+                            <a class="btn btn-sm" href="https://www.youtube.com/watch?v=Zb_mTyWeHYc" target="_blank" rel="noopener">
+                                Watch
+                                <svg class="arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="vid">
+                        <div class="thumb" onclick="loadVideo(this,'vHOl_k28R18')">
+                            <img src="https://img.youtube.com/vi/vHOl_k28R18/hqdefault.jpg" alt="Virtual Painting" loading="lazy">
+                            <span class="vid-num">08</span>
+                            <span class="vid-mark">Stream</span>
+                        </div>
+                        <div class="vid-body">
+                            <h3>Virtual Painting</h3>
+                            <p class="muted">Merging AI with HCI via hand tracking.</p>
+                            <a class="btn btn-sm" href="https://www.youtube.com/watch?v=vHOl_k28R18" target="_blank" rel="noopener">
+                                Watch
+                                <svg class="arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="carousel-controls">
+                    <button class="icon-btn" id="carLeft" aria-label="Previous video" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 6l-6 6 6 6"/></svg>
+                    </button>
+                    <button class="icon-btn" id="carRight" aria-label="Next video" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="hud-section" id="experience" aria-labelledby="expTitle">
+        <div class="container">
+            <div class="section-head reveal">
+                <div class="left">
+                    <span class="eyebrow">// 06 — Operations</span>
+                    <h2 id="expTitle">Experience</h2>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <div class="exp-list reveal">
+                <article class="exp-card current">
+                    <div class="exp-meta">
+                        <span class="exp-when">Aug 2024 — Present</span>
+                        <span class="pill live">Active</span>
+                    </div>
+                    <div class="exp-body">
+                        <h3 class="exp-title">Research Assistant</h3>
+                        <p class="exp-org">HEX Lab · University of Wisconsin-Milwaukee <span class="muted">· Wisconsin, USA</span></p>
+                        <ul class="exp-bullets">
+                            <li>VR locomotion research</li>
+                            <li>Data analysis &amp; visualization</li>
+                            <li>Research paper writing</li>
+                        </ul>
+                        <div class="tags-row">
+                            <span class="tag">VR Research</span>
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Academic Writing</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="exp-card current">
+                    <div class="exp-meta">
+                        <span class="exp-when">Aug 2024 — Present</span>
+                        <span class="pill live">Active</span>
+                    </div>
+                    <div class="exp-body">
+                        <h3 class="exp-title">Teaching Assistant</h3>
+                        <p class="exp-org">University of Wisconsin-Milwaukee <span class="muted">· Wisconsin, USA</span></p>
+                        <ul class="exp-bullets">
+                            <li>Course instruction &amp; grading</li>
+                            <li>Student mentoring</li>
+                            <li>Lab supervision</li>
+                        </ul>
+                        <div class="tags-row">
+                            <span class="tag">Teaching</span>
+                            <span class="tag">Mentoring</span>
+                            <span class="tag">Lab Management</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="exp-card">
+                    <div class="exp-meta">
+                        <span class="exp-when">Sep 2020 — Jan 2022</span>
+                        <span class="pill ok">Completed</span>
+                    </div>
+                    <div class="exp-body">
+                        <h3 class="exp-title">Research Assistant</h3>
+                        <p class="exp-org">AML Lab <span class="muted">· Dhaka, Bangladesh</span></p>
+                        <ul class="exp-bullets">
+                            <li>Computer vision research</li>
+                            <li>ML model development</li>
+                            <li>Publication writing</li>
+                        </ul>
+                        <div class="tags-row">
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Research</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ HEXLAB ============ -->
+    <section class="hud-section" id="lab" aria-labelledby="labTitle">
+        <div class="container">
+            <div class="section-head reveal">
+                <div class="left">
+                    <span class="eyebrow">// 07 — Affiliation</span>
+                    <h2 id="labTitle">HEX Lab</h2>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <div class="lab reveal">
+                <div class="lab-identity">
+                    <div class="lab-logo">
+                        <img src="image/hex_lab/hex lab icon 2.png" alt="HEX Lab"
+                            onerror="this.parentElement.innerHTML='<div style=&quot;font-size:3rem&quot;>🔬</div>';">
+                    </div>
+                    <div class="lab-id-text">
+                        <span class="eyebrow">Human Experience in XR</span>
+                        <h3 class="lab-name">HEX Lab</h3>
+                        <p class="lab-affil muted">UW-Milwaukee · CS Department</p>
+                        <span class="pill live">Active</span>
+                    </div>
+                </div>
+
+                <div class="lab-content">
+                    <p class="lab-desc">
+                        We work on understanding and improving human-computer interaction through immersive technologies — VR, AR, and the spatial systems that connect them to lived behavior.
+                    </p>
+
+                    <div class="lab-focus">
+                        <span class="lbl-mini">Focus areas</span>
+                        <div class="tags-row">
+                            <span class="tag">VR Research</span>
+                            <span class="tag">HCI</span>
+                            <span class="tag">Locomotion</span>
+                            <span class="tag">Pedestrian Safety</span>
+                            <span class="tag">Edutainment</span>
+                            <span class="tag">Accessibility</span>
+                        </div>
+                    </div>
+
+                    <div class="lab-stats">
+                        <div class="lab-stat">
+                            <div class="ls-num"><span data-count="4" data-suffix="+">4+</span></div>
+                            <div class="ls-lbl">Active projects</div>
+                        </div>
+                        <div class="lab-stat">
+                            <div class="ls-num"><span data-count="1" data-suffix="+">1+</span></div>
+                            <div class="ls-lbl">Publications</div>
+                        </div>
+                        <div class="lab-stat">
+                            <div class="ls-num"><span data-count="6">6</span></div>
+                            <div class="ls-lbl">Team members</div>
+                        </div>
+                        <div class="lab-stat">
+                            <div class="ls-num"><span data-count="3">3</span></div>
+                            <div class="ls-lbl">Years active</div>
+                        </div>
+                    </div>
+
+                    <div class="lab-actions">
+                        <a class="btn btn-primary" href="https://sites.uwm.edu/hex/" target="_blank" rel="noopener">
+                            Visit lab website
+                            <svg class="arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                        </a>
+                        <a class="btn" href="#research">View active studies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="hud-section" id="contact" aria-labelledby="contactTitle">
+        <div class="container">
+            <div class="section-head reveal">
+                <div class="left">
+                    <span class="eyebrow">// 08 — Channel</span>
+                    <h2 id="contactTitle">Contact</h2>
+                </div>
+                <div class="divider"></div>
+                <span class="pill live">Online</span>
+            </div>
+
+            <div class="contact-stack reveal">
+
+                <!-- ============ TIER 1 — PRIMARY ============ -->
+                <div class="cg-block cg-block-card">
+                    <div class="cg-head">
+                        <span class="cg-num">01</span>
+                        <span class="cg-title">Reach me directly</span>
+                        <span class="cg-rule"></span>
+                        <span class="pill live">Replies in 24h</span>
+                    </div>
+
+                    <div class="cg-grid cg-grid-2">
+                        <!-- Email — primary card -->
+                        <article class="cg-card">
+                            <div class="cg-card-top">
+                                <div class="cg-ico">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+                                </div>
+                                <span class="cg-lbl">Email</span>
+                            </div>
+                            <a class="cg-val" href="mailto:hasan26@uwm.edu">hasan26@uwm.edu</a>
+                            <div class="cg-card-actions">
+                                <a class="btn btn-sm btn-primary" href="mailto:hasan26@uwm.edu">
+                                    Send email
+                                    <svg class="arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                                </a>
+                                <button class="btn-copy" data-copy="hasan26@uwm.edu" aria-label="Copy email" type="button">
+                                    <svg class="ico-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                                    <svg class="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- LinkedIn — primary card -->
+                        <article class="cg-card">
+                            <div class="cg-card-top">
+                                <div class="cg-ico">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3v11zM6.5 6.7a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.4V19z"/></svg>
+                                </div>
+                                <span class="cg-lbl">LinkedIn</span>
+                            </div>
+                            <a class="cg-val" href="https://www.linkedin.com/in/zanahid/" target="_blank" rel="noopener">linkedin.com/in/zanahid</a>
+                            <div class="cg-card-actions">
+                                <a class="btn btn-sm" href="https://www.linkedin.com/in/zanahid/" target="_blank" rel="noopener">
+                                    Open profile
+                                    <svg class="arrow" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                                </a>
+                                <button class="btn-copy" data-copy="https://www.linkedin.com/in/zanahid/" aria-label="Copy LinkedIn URL" type="button">
+                                    <svg class="ico-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                                    <svg class="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- ============ TIER 2 — SECONDARY ============ -->
+                <div class="cg-block cg-block-card">
+                    <div class="cg-head">
+                        <span class="cg-num">02</span>
+                        <span class="cg-title">Academic profiles</span>
+                        <span class="cg-rule"></span>
+                    </div>
+
+                    <div class="cg-grid cg-grid-3">
+                        <!-- GitHub -->
+                        <article class="cg-tile">
+                            <div class="cg-tile-head">
+                                <div class="cg-ico cg-ico-sm">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.92 10.92 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.13v3.16c0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                                </div>
+                                <span class="cg-lbl cg-lbl-sm">GitHub</span>
+                            </div>
+                            <a class="cg-val cg-val-sm" href="https://github.com/nahid-uwm" target="_blank" rel="noopener">@nahid-uwm</a>
+                            <div class="cg-tile-actions">
+                                <a class="btn btn-sm btn-ghost" href="https://github.com/nahid-uwm" target="_blank" rel="noopener">Open</a>
+                                <button class="btn-copy" data-copy="https://github.com/nahid-uwm" aria-label="Copy GitHub URL" type="button">
+                                    <svg class="ico-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                                    <svg class="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- Scholar -->
+                        <article class="cg-tile">
+                            <div class="cg-tile-head">
+                                <div class="cg-ico cg-ico-sm">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 1L3 8l9 7 9-7-9-7z"/><path d="M12 16l9-7"/><circle cx="12" cy="17" r="6"/></svg>
+                                </div>
+                                <span class="cg-lbl cg-lbl-sm">Google Scholar</span>
+                            </div>
+                            <a class="cg-val cg-val-sm" href="https://scholar.google.com/citations?user=xQR0_1QAAAAJ&hl" target="_blank" rel="noopener">View profile</a>
+                            <div class="cg-tile-actions">
+                                <a class="btn btn-sm btn-ghost" href="https://scholar.google.com/citations?user=xQR0_1QAAAAJ&hl" target="_blank" rel="noopener">Open</a>
+                                <button class="btn-copy" data-copy="https://scholar.google.com/citations?user=xQR0_1QAAAAJ&hl" aria-label="Copy Scholar URL" type="button">
+                                    <svg class="ico-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                                    <svg class="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- ORCID -->
+                        <article class="cg-tile">
+                            <div class="cg-tile-head">
+                                <div class="cg-ico cg-ico-sm">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11.5" fill="none" stroke="currentColor"/><text x="12" y="16" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="currentColor">iD</text></svg>
+                                </div>
+                                <span class="cg-lbl cg-lbl-sm">ORCID</span>
+                            </div>
+                            <a class="cg-val cg-val-sm" href="https://orcid.org/0009-0009-1791-7505" target="_blank" rel="noopener">0009-0009-1791-7505</a>
+                            <div class="cg-tile-actions">
+                                <a class="btn btn-sm btn-ghost" href="https://orcid.org/0009-0009-1791-7505" target="_blank" rel="noopener">Open</a>
+                                <button class="btn-copy" data-copy="https://orcid.org/0009-0009-1791-7505" aria-label="Copy ORCID URL" type="button">
+                                    <svg class="ico-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                                    <svg class="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- ============ TIER 3 — TERTIARY ============ -->
+                <div class="cg-block cg-block-card">
+                    <div class="cg-head">
+                        <span class="cg-num">03</span>
+                        <span class="cg-title">Affiliation &amp; location</span>
+                        <span class="cg-rule"></span>
+                    </div>
+
+                    <div class="cg-grid cg-grid-2">
+                        <div class="cg-mini">
+                            <span class="cg-lbl cg-lbl-sm">Affiliation</span>
+                            <div class="cg-mini-row">
+                                <span class="cg-mini-val">UW-Milwaukee · CS Department</span>
+                                <button class="btn-copy" data-copy="University of Wisconsin-Milwaukee, Computer Science Department" aria-label="Copy affiliation" type="button">
+                                    <svg class="ico-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                                    <svg class="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cg-mini">
+                            <span class="cg-lbl cg-lbl-sm">Location</span>
+                            <div class="cg-mini-row">
+                                <span class="cg-mini-val">Milwaukee, Wisconsin · USA</span>
+                                <button class="btn-copy" data-copy="Milwaukee, Wisconsin, USA" aria-label="Copy location" type="button">
+                                    <svg class="ico-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                                    <svg class="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============ CTA ============ -->
+                <div class="contact-actions">
+                    <button class="btn btn-primary" id="downloadCV2" type="button">
+                        Request CV (PDF)
+                        <svg class="arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12M6 12l6 6 6-6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div>
+                <div class="brand" style="margin-bottom:0.4rem"><span>MD Nahid Hasan</span></div>
+                <div class="muted" style="font-size:0.8rem">VR · HCI · AI · Built with care · Milwaukee, WI</div>
+            </div>
+            <div class="links">
+                <a href="https://github.com/nahid-uwm" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/zanahid/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=xQR0_1QAAAAJ&hl" target="_blank" rel="noopener">Scholar</a>
+                <a href="mailto:hasan26@uwm.edu">Email</a>
+            </div>
+            <div class="muted" style="font-size:0.8rem">© 2026</div>
+        </div>
+    </footer>
+
+    <script src="js/v2.js"></script>
+</body>
+</html>

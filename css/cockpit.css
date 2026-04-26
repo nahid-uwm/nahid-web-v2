@@ -1,0 +1,481 @@
+/* =================================================================
+   COCKPIT / SHIP-DOCK HUD CHROME
+   Layered on top of cyberpunk.css. Adds:
+   - Side instrument rails (left = gauges, right = sector jump + radar)
+   - 4 corner viewport bezels with rivets
+   - Section MFD frames
+   - Hero porthole bezel
+   ================================================================= */
+
+/* ─── Body padding for rails ─── */
+@media (min-width: 1024px) {
+    body {
+        padding-left: 92px;
+        padding-right: 92px;
+    }
+    nav.fixed.top-0 {
+        left: 92px !important;
+        right: 92px !important;
+        width: auto !important;
+    }
+    /* keep top/bottom chrome full width */
+    .hud-chrome-top, .data-ticker, .scroll-progress {
+        left: 0 !important;
+        right: 0 !important;
+    }
+}
+
+/* Hide elements replaced by rails */
+.progress-dots { display: none !important; }
+.data-stream   { display: none !important; }
+
+/* ============================================================
+   LEFT INSTRUMENT RAIL  (POWR / SHLD / COOL / NAV gauges)
+   ============================================================ */
+.ship-rail-left {
+    position: fixed;
+    top: 26px;
+    bottom: 24px;
+    left: 0;
+    width: 92px;
+    z-index: 95;
+    background:
+        linear-gradient(180deg, rgba(10, 10, 24, 0.97), rgba(4, 4, 12, 0.97)),
+        linear-gradient(90deg, rgba(34, 211, 238, 0.04), transparent);
+    border-right: 1px solid rgba(34, 211, 238, 0.4);
+    box-shadow: inset -2px 0 14px rgba(34, 211, 238, 0.1),
+                4px 0 24px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    font-family: 'IBM Plex Mono', monospace;
+}
+.ship-rail-left::before {
+    /* Rivets — top + bottom corner */
+    content: '';
+    position: absolute;
+    top: 8px; right: 8px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--c-magenta);
+    box-shadow: 0 0 6px var(--c-magenta);
+}
+.ship-rail-left::after {
+    content: '';
+    position: absolute;
+    bottom: 8px; right: 8px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--c-cyan);
+    box-shadow: 0 0 6px var(--c-cyan);
+    animation: live-pulse 1.4s ease-in-out infinite;
+}
+
+.rail-header {
+    padding: 14px 6px;
+    text-align: center;
+    font-family: 'Tektur', monospace;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--c-magenta);
+    text-shadow: 0 0 6px var(--c-magenta);
+    border-bottom: 1px solid rgba(34, 211, 238, 0.25);
+    background: linear-gradient(180deg, rgba(255, 0, 128, 0.06), transparent);
+}
+
+.rail-gauges {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 14px 8px;
+    gap: 6px;
+    min-height: 0;
+}
+
+.ship-gauge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-height: 0;
+}
+.ship-gauge .bar-value {
+    font-family: 'Tektur', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--c-cyan);
+    text-shadow: 0 0 6px var(--c-cyan);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.5px;
+}
+.ship-gauge .bar-track {
+    position: relative;
+    width: 8px;
+    flex: 1;
+    min-height: 60px;
+    background: rgba(34, 211, 238, 0.08);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    overflow: hidden;
+}
+.ship-gauge .bar-track::before {
+    /* tick marks */
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg,
+        transparent 0, transparent 9px,
+        rgba(34, 211, 238, 0.2) 9px, rgba(34, 211, 238, 0.2) 10px);
+    pointer-events: none;
+    z-index: 2;
+}
+.ship-gauge .bar-fill {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 0%;
+    background: linear-gradient(180deg, var(--c-magenta), var(--c-cyan));
+    box-shadow: 0 0 8px var(--c-cyan), inset 0 0 4px rgba(255, 255, 255, 0.4);
+    transition: height 0.5s cubic-bezier(0.2, 0.9, 0.3, 1);
+    z-index: 1;
+}
+.ship-gauge.warn .bar-fill {
+    background: linear-gradient(180deg, var(--c-amber), var(--c-pink));
+    box-shadow: 0 0 8px var(--c-amber);
+}
+.ship-gauge .bar-label {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: var(--c-text-dim);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.rail-footer {
+    padding: 8px 6px;
+    border-top: 1px solid rgba(34, 211, 238, 0.25);
+    text-align: center;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: var(--c-cyan);
+    background: linear-gradient(0deg, rgba(34, 211, 238, 0.06), transparent);
+}
+.rail-footer .reactor {
+    width: 32px;
+    height: 32px;
+    margin: 6px auto 4px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--c-cyan) 0%, var(--c-magenta) 50%, transparent 80%);
+    box-shadow: 0 0 16px var(--c-cyan), inset 0 0 8px rgba(255,255,255,0.3);
+    animation: reactor-spin 3s linear infinite,
+               reactor-pulse 1.6s ease-in-out infinite;
+    position: relative;
+}
+.rail-footer .reactor::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff, transparent 70%);
+    mix-blend-mode: screen;
+}
+@keyframes reactor-spin {
+    to { transform: rotate(360deg); }
+}
+@keyframes reactor-pulse {
+    0%, 100% { box-shadow: 0 0 16px var(--c-cyan), inset 0 0 8px rgba(255,255,255,0.3); }
+    50%      { box-shadow: 0 0 28px var(--c-magenta), inset 0 0 14px rgba(255,255,255,0.5); }
+}
+
+/* ============================================================
+   RIGHT INSTRUMENT RAIL  (sector jump + radar)
+   ============================================================ */
+.ship-rail-right {
+    position: fixed;
+    top: 26px;
+    bottom: 24px;
+    right: 0;
+    width: 92px;
+    z-index: 95;
+    background:
+        linear-gradient(180deg, rgba(10, 10, 24, 0.97), rgba(4, 4, 12, 0.97)),
+        linear-gradient(270deg, rgba(34, 211, 238, 0.04), transparent);
+    border-left: 1px solid rgba(34, 211, 238, 0.4);
+    box-shadow: inset 2px 0 14px rgba(34, 211, 238, 0.1),
+                -4px 0 24px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    font-family: 'IBM Plex Mono', monospace;
+}
+.ship-rail-right::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 8px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--c-magenta);
+    box-shadow: 0 0 6px var(--c-magenta);
+}
+.ship-rail-right::after {
+    content: '';
+    position: absolute;
+    bottom: 8px; left: 8px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--c-cyan);
+    box-shadow: 0 0 6px var(--c-cyan);
+    animation: live-pulse 1.4s ease-in-out infinite;
+}
+
+.ship-sector-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 8px;
+    gap: 4px;
+    overflow-y: auto;
+    min-height: 0;
+}
+.ship-sector-list::-webkit-scrollbar { width: 0; }
+.ship-sector {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 6px;
+    border: 1px solid rgba(34, 211, 238, 0.18);
+    background: rgba(4, 4, 12, 0.5);
+    cursor: pointer;
+    font-size: 8px;
+    letter-spacing: 1.4px;
+    color: var(--c-text-dim);
+    transition: all 0.2s ease;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 700;
+    clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+}
+.ship-sector .led {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(34, 211, 238, 0.3);
+    flex-shrink: 0;
+}
+.ship-sector .num {
+    color: var(--c-magenta);
+    font-weight: 900;
+}
+.ship-sector .label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ship-sector:hover {
+    border-color: var(--c-cyan);
+    color: var(--c-cyan);
+    background: rgba(34, 211, 238, 0.1);
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+}
+.ship-sector.active {
+    border-color: var(--c-magenta);
+    color: var(--c-magenta);
+    background: rgba(255, 0, 128, 0.12);
+    box-shadow: 0 0 14px rgba(255, 0, 128, 0.4),
+                inset 0 0 8px rgba(255, 0, 128, 0.1);
+}
+.ship-sector.active .led {
+    background: var(--c-magenta);
+    box-shadow: 0 0 8px var(--c-magenta);
+    animation: live-pulse 1.4s ease-in-out infinite;
+}
+
+/* ─── RADAR ─── */
+.ship-radar-wrap {
+    border-top: 1px solid rgba(34, 211, 238, 0.25);
+    padding: 8px;
+    text-align: center;
+    background: linear-gradient(0deg, rgba(34, 211, 238, 0.06), transparent);
+}
+.ship-radar-wrap .radar-label {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: var(--c-cyan);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+.ship-radar {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    border: 1px solid var(--c-cyan);
+    border-radius: 50%;
+    position: relative;
+    background:
+        radial-gradient(circle at center, rgba(34, 211, 238, 0.08) 0%, transparent 70%);
+    box-shadow: 0 0 12px rgba(34, 211, 238, 0.4),
+                inset 0 0 12px rgba(34, 211, 238, 0.18);
+    overflow: hidden;
+}
+.ship-radar::before, .ship-radar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(34, 211, 238, 0.18);
+}
+.ship-radar::before { transform: scale(0.66); }
+.ship-radar::after  { transform: scale(0.33); }
+.ship-radar .crosshair-h,
+.ship-radar .crosshair-v {
+    position: absolute;
+    background: rgba(34, 211, 238, 0.18);
+}
+.ship-radar .crosshair-h { left: 0; right: 0; top: 50%; height: 1px; }
+.ship-radar .crosshair-v { top: 0; bottom: 0; left: 50%; width: 1px; }
+.ship-radar .sweep {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 50%;
+    height: 50%;
+    transform-origin: top left;
+    background: conic-gradient(from 0deg,
+        transparent 0deg,
+        rgba(34, 211, 238, 0.45) 50deg,
+        rgba(34, 211, 238, 0.85) 88deg,
+        transparent 90deg,
+        transparent 360deg);
+    animation: radar-sweep 3s linear infinite;
+    pointer-events: none;
+}
+@keyframes radar-sweep {
+    to { transform: rotate(360deg); }
+}
+.ship-radar .blip {
+    position: absolute;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--c-magenta);
+    box-shadow: 0 0 8px var(--c-magenta);
+    animation: blip-fade 4s ease-in-out infinite;
+}
+.ship-radar .blip:nth-child(4) { top: 28%; left: 38%; animation-delay: 0.2s; }
+.ship-radar .blip:nth-child(5) { top: 62%; left: 70%; animation-delay: 1.6s; }
+.ship-radar .blip:nth-child(6) { top: 70%; left: 30%; animation-delay: 2.8s; }
+@keyframes blip-fade {
+    0%, 100% { opacity: 0; transform: scale(0.6); }
+    15%, 75% { opacity: 1; transform: scale(1); }
+}
+
+/* ============================================================
+   VIEWPORT CORNER BEZELS  (4 large L-shapes)
+   ============================================================ */
+.ship-corner {
+    position: fixed;
+    width: 110px;
+    height: 110px;
+    z-index: 96;
+    pointer-events: none;
+}
+.ship-corner.tl { top: 26px;     left: 92px;  border-top: 2px solid var(--c-cyan);    border-left: 2px solid var(--c-cyan);    }
+.ship-corner.tr { top: 26px;     right: 92px; border-top: 2px solid var(--c-cyan);    border-right: 2px solid var(--c-cyan);   }
+.ship-corner.bl { bottom: 24px;  left: 92px;  border-bottom: 2px solid var(--c-cyan); border-left: 2px solid var(--c-cyan);    }
+.ship-corner.br { bottom: 24px;  right: 92px; border-bottom: 2px solid var(--c-cyan); border-right: 2px solid var(--c-cyan);   }
+
+@media (max-width: 1023px) {
+    .ship-corner.tl, .ship-corner.bl { left: 0;  }
+    .ship-corner.tr, .ship-corner.br { right: 0; }
+}
+
+.ship-corner .rivet {
+    position: absolute;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--c-magenta);
+    box-shadow: 0 0 6px var(--c-magenta);
+}
+.ship-corner.tl .rivet { top: 6px;    left: 6px;    }
+.ship-corner.tr .rivet { top: 6px;    right: 6px;   }
+.ship-corner.bl .rivet { bottom: 6px; left: 6px;    }
+.ship-corner.br .rivet { bottom: 6px; right: 6px;   }
+
+.ship-corner .corner-label {
+    position: absolute;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 1.8px;
+    color: var(--c-cyan);
+    text-shadow: 0 0 6px var(--c-cyan);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.ship-corner.tl .corner-label { top: 16px;    left: 18px; }
+.ship-corner.tr .corner-label { top: 16px;    right: 18px; }
+.ship-corner.bl .corner-label { bottom: 16px; left: 18px; }
+.ship-corner.br .corner-label { bottom: 16px; right: 18px; }
+
+.ship-corner .corner-label .key { color: var(--c-magenta); margin-right: 4px; }
+
+/* ============================================================
+   HERO PORTHOLE FRAME — chunky bezel "main viewport"
+   ============================================================ */
+#hero {
+    position: relative;
+}
+#hero::before {
+    content: 'MAIN_VIEWPORT // SHIP-NAHID-01';
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--c-cyan);
+    text-shadow: 0 0 8px var(--c-cyan);
+    background: rgba(4, 4, 12, 0.7);
+    border: 1px solid var(--c-cyan);
+    padding: 4px 14px;
+    text-transform: uppercase;
+    z-index: 10;
+    clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+#hero::after {
+    content: '';
+    position: absolute;
+    inset: 60px 32px;
+    border: 1px solid rgba(34, 211, 238, 0.22);
+    pointer-events: none;
+    z-index: 1;
+    clip-path: polygon(
+        24px 0, calc(100% - 24px) 0, 100% 24px,
+        100% calc(100% - 24px), calc(100% - 24px) 100%,
+        24px 100%, 0 calc(100% - 24px), 0 24px);
+}
+
+/* ============================================================
+   SECTION MFD CHROME — every section becomes a "module"
+   ============================================================ */
+section[id]:not(#hero) {
+    position: relative;
+}
+section[id]:not(#hero) > h2.tektur::before {
+    /* prepend MFD bezel */
+    position: relative;
+}
+section[id]:not(#hero) > h2.tektur {
+    padding-top: 28px;
+}
+
+/* ============================================================
+   SCROLL-PROGRESS — relabel as "WARP_SYNC"
+   ============================================================ */
+.scroll-progress {
+    height: 3px !important;
+}
+
+/* ============================================================
+   RESPONSIVE — collapse rails on small screens
+   ============================================================ */
+@media (max-width: 1023px) {
+    .ship-rail-left, .ship-rail-right { display: none !important; }
+    body { padding-left: 0; padding-right: 0; }
+}
