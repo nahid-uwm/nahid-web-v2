@@ -81,14 +81,38 @@ img { max-width: 100%; display: block; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 a { color: inherit; text-decoration: none; }
 
-/* skip link */
-.skip-link {
-    position: absolute; left: -9999px;
+/* Global focus ring — always visible for keyboard nav */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
 }
-.skip-link:focus {
-    left: 1rem; top: 1rem; z-index: 9999;
-    background: var(--bg-elev); color: var(--accent); padding: 0.5rem 1rem;
-    border: 1px solid var(--accent); border-radius: var(--radius);
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* skip link — keyboard a11y entry point */
+.skip-link {
+    position: fixed;
+    top: -100px;
+    left: 1rem;
+    z-index: 9999;
+    padding: 0.6rem 1rem;
+    background: var(--bg-elev);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition: top var(--t-base) var(--ease-out);
+}
+.skip-link:focus, .skip-link:focus-visible {
+    top: 1rem;
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
 
 /* ---------- Background atmosphere ---------- */
@@ -346,8 +370,22 @@ section.hud-section {
 .btn-ghost { --fill: transparent; }
 
 .btn[disabled] {
-    opacity: 0.4; pointer-events: none; filter: grayscale(0.5);
+    --stroke: var(--border);
+    --fill: transparent;
+    color: var(--text-dim);
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.55;
+    filter: grayscale(0.4);
 }
+.btn-primary[disabled] {
+    --stroke: var(--border);
+    --fill: var(--surface);
+    color: var(--text-dim);
+    opacity: 0.6;
+}
+.btn[disabled]:hover { transform: none; box-shadow: none; }
+.btn[disabled]::after { display: none; }
 
 /* ---------- Cards (HUD panels) ---------- */
 .card {
@@ -400,21 +438,20 @@ section.hud-section {
 
 /* card scan line on hover (uses ::after — does not conflict with .card-clip ::before) */
 .card-scan::after {
-    content: ''; position: absolute; top: -2px; left: 1px; right: 1px; height: 1px;
+    content: ''; position: absolute; top: 0; left: 1px; right: 1px; height: 1px;
     background: linear-gradient(90deg, transparent, var(--accent-line), transparent);
-    transform: translateY(0);
     opacity: 0;
     pointer-events: none;
     z-index: 1;
 }
 .card-scan:hover::after {
-    animation: scan 1.6s linear infinite;
+    animation: scan 1.8s linear infinite;
     opacity: 1;
 }
 @keyframes scan {
-    0% { transform: translateY(0); opacity: 0; }
+    0% { top: 0; opacity: 0; }
     10% { opacity: 1; }
-    100% { transform: translateY(360px); opacity: 0; }
+    100% { top: 100%; opacity: 0; }
 }
 
 .card h3 { margin-bottom: 0.5rem; font-family: var(--font-display); }
@@ -718,17 +755,18 @@ section.hud-section {
     box-shadow: 0 0 8px var(--accent);
 }
 
-/* scanning overlay on hero panel */
+/* scanning overlay on hero panel — uses % so it tracks panel height */
 .hero-panel .scanline {
-    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    position: absolute; top: 0; left: 1px; right: 1px; height: 1px;
     background: linear-gradient(90deg, transparent, var(--accent-line), transparent);
-    animation: heroScan 4s linear infinite;
+    animation: heroScan 5s linear infinite;
     pointer-events: none;
+    z-index: 0;
 }
 @keyframes heroScan {
-    0% { transform: translateY(0); opacity: 0; }
+    0% { top: 0; opacity: 0; }
     8% { opacity: 1; }
-    100% { transform: translateY(380px); opacity: 0; }
+    100% { top: 100%; opacity: 0; }
 }
 
 /* ---------- About ---------- */
@@ -743,6 +781,8 @@ section.hud-section {
 }
 .about-left { display: flex; flex-direction: column; gap: 2rem; min-width: 0; }
 .about-bio { max-width: 42rem; }
+.bio-lead { font-size: 1.05rem; line-height: 1.65; margin-bottom: 1rem; }
+.bio-lead:last-child { margin-bottom: 0; }
 .about-edu { width: 100%; }
 .edu-stack { display: flex; flex-direction: column; gap: 0.75rem; }
 
@@ -1780,6 +1820,8 @@ a.cg-val:hover { color: var(--accent); }
     font-size: 0.85rem; color: var(--text-muted);
     align-items: center;
 }
+.footer-brand { display: flex; flex-direction: column; gap: 0.4rem; }
+.footer-meta { font-size: 0.8rem; }
 .footer .links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
 .footer .links a {
     position: relative; padding: 0.25rem 0;
@@ -1881,8 +1923,10 @@ html, body { overflow-x: clip; }
     .grid-2 { grid-template-columns: 1fr; gap: 1rem; }
     .grid-3 { grid-template-columns: 1fr; gap: 1rem; }
 
-    /* Contact card padding */
-    .contact-grid { gap: 0.75rem; }
+    /* Contact: stack tiers, group head sits compact */
+    .contact-stack { gap: 1rem; }
+    .cg-block-card { padding: 1.25rem 1.4rem; }
+    .cg-grid-3 { grid-template-columns: 1fr; }
 
     /* Buttons size on tap */
     .btn { height: 42px; }
@@ -1904,7 +1948,7 @@ html, body { overflow-x: clip; }
     .hero .ctas .btn { width: 100%; }
 
     /* Hero panel */
-    .hero-panel { padding: 0.9rem; }
+    .hero-panel { --cut: 10px; padding: 1rem 1.1rem; }
     .hp-id { grid-template-columns: 48px 1fr; gap: 0.75rem; }
     .hp-avatar { width: 48px; height: 48px; }
     .hp-name { font-size: 0.92rem; }
@@ -1912,8 +1956,10 @@ html, body { overflow-x: clip; }
     /* Cards */
     .card-clip { padding: 1.1rem; }
     .card { padding: 1.1rem; }
-    .card .actions { flex-direction: column; align-items: stretch; }
-    .card .actions .btn { width: 100%; }
+    /* keep actions horizontal — primary always full-width, secondaries inline */
+    .card .actions { flex-direction: row; flex-wrap: wrap; }
+    .card .actions .btn-primary { width: 100%; }
+    .card .actions .btn-ghost { flex: 1; min-width: 96px; }
 
     /* Publications: rail flips on top horizontal already at ≤880, tighten */
     .pub-card { padding: 1.1rem; }
@@ -1933,13 +1979,35 @@ html, body { overflow-x: clip; }
     .edu-card { padding: 0.7rem; }
     .edu-body h3 { font-size: 0.92rem; }
 
-    /* Gear */
-    .gear-grid { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 0.5rem; }
-    .gear { padding: 0.75rem; }
+    /* Gear: stack one per row on phone for proper hierarchy */
+    .gear-grid { grid-template-columns: 1fr; gap: 0.6rem; }
+    .gear { padding: 1rem 1.1rem; gap: 0.7rem; }
+    .gear-head { padding-bottom: 0.6rem; }
+    .gear .name { font-size: 1.05rem; }
 
-    /* Contact */
-    .card-clip[class*="reveal"] { padding: 1.1rem; }
-    .contact-row { font-size: 0.85rem; }
+    /* Contact: tighten cards on phone */
+    .contact-stack { gap: 0.85rem; }
+    .cg-block-card { padding: 1.1rem 1.25rem; }
+    .cg-block-card .cg-head { margin-bottom: 1rem; }
+    .cg-num { font-size: 0.66rem; padding: 0.2rem 0.4rem; }
+    .cg-title { font-size: 0.78rem; }
+    .cg-grid-2, .cg-grid-3 { grid-template-columns: 1fr; gap: 0.85rem; }
+    /* tier-1 dividers flip horizontal */
+    .cg-grid-2 > .cg-card + .cg-card,
+    .cg-grid-3 > .cg-tile + .cg-tile {
+        border-left: 0;
+        border-top: 1px dashed var(--border);
+        padding-left: 0; padding-top: 0.85rem;
+    }
+    .cg-grid-2 > .cg-card:first-child,
+    .cg-grid-3 > .cg-tile:not(:last-child) {
+        padding-right: 0; padding-bottom: 0.5rem;
+    }
+    .cg-val { font-size: 0.95rem; }
+    .cg-card-actions, .cg-tile-actions { flex-wrap: wrap; }
+
+    /* Research interest tags: keep readable */
+    .ri-tag { height: 32px; font-size: 0.8rem; padding: 0 0.75rem; }
 
     /* Footer */
     .footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
@@ -1955,8 +2023,6 @@ html, body { overflow-x: clip; }
     .section-head { margin-bottom: 2rem; }
     .section-head .divider { display: none; }
 
-    /* Body type slightly tighter */
-    body { font-size: 15px; }
 }
 
 /* Tiny mobile (≤380px) */
