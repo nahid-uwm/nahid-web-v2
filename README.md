@@ -1,1 +1,1 @@
-https://nahid-uwm.github.io/nahid/
+https://nahid-uwm.github.io/nahid-web-v2/
